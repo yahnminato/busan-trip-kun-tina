@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>釜山五天四夜暖心自由行｜爸媽專屬行程手冊</title>
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --card: #ffffff;
+    --primary: #1b4965;
+    --secondary: #5fa8d3;
+    --accent: #e07a5f;
+    --text: #2b2d42;
+    --muted: #6c757d;
+    --border: #e2e8f0;
+    --tag-bg: #eef5f9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    padding-bottom: 48px;
+  }
+  header {
+    background: linear-gradient(135deg, #1b4965 0%, #2c6e91 100%);
+    color: #fff;
+    padding: 32px 20px 28px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 1.65rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  header p {
+    font-size: 0.95rem;
+    opacity: 0.92;
+  }
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 12px;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  @media (min-width: 768px) {
+    .nav-bar { justify-content: center; }
+  }
+  .nav-bar a {
+    text-decoration: none;
+    color: var(--primary);
+    background: var(--tag-bg);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .nav-bar a:hover, .nav-bar a:active {
+    background: var(--primary);
+    color: #fff;
+  }
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 18px 14px 0;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    border: 1px solid var(--border);
+  }
+  .card-title {
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--tag-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .badge {
+    font-size: 0.78rem;
+    background: var(--accent);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 600px) {
+    .info-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .info-box {
+    background: var(--tag-bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.94rem;
+  }
+  .info-box strong { color: var(--primary); display: block; margin-bottom: 4px; }
+  .app-list, .prep-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .app-item {
+    background: #fafbfc;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .app-name { font-weight: 700; color: var(--primary); font-size: 1rem; }
+  .btn-links { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 5px 11px;
+    border-radius: 8px;
+    background: var(--primary);
+    color: #fff;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.88; }
+  .btn-outline {
+    background: #fff;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+  }
+  .btn-map {
+    background: #2a9d8f;
+    color: #fff;
+  }
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .step {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .step:last-child { border-bottom: none; padding-bottom: 0; }
+  .time {
+    min-width: 96px;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    padding-top: 2px;
+  }
+  .detail { flex: 1; font-size: 0.95rem; }
+  .detail-title { font-weight: 700; color: var(--text); margin-bottom: 3px; }
+  .copy-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #0f172a;
+    margin-top: 4px;
+    cursor: pointer;
+  }
+  .copy-box:hover { background: #e2e8f0; }
+  .option-box {
+    background: #fff9f5;
+    border-left: 4px solid var(--accent);
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-top: 6px;
+    font-size: 0.92rem;
+  }
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(27, 73, 101, 0.95);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    z-index: 999;
+  }
+  .toast.show { opacity: 1; }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌊 釜山五天四夜暖心自由行</h1>
+  <p>12/26（六）－ 12/30（三）｜中華航空早去午回｜西面 SOTA SUITE</p>
+</header>
+
+<nav class="nav-bar">
+  <a href="#overview">✈️ 航班住宿</a>
+  <a href="#prep">📱 行前必備</a>
+  <a href="#day1">Day 1 廣安里</a>
+  <a href="#day2">Day 2 海雲臺</a>
+  <a href="#day3">Day 3 二妓臺</a>
+  <a href="#day4">Day 4 影島</a>
+  <a href="#day5">Day 5 返台</a>
+</nav>
+
+<div class="container">
+
+  <!-- 航班與住宿總覽 -->
+  <section id="overview" class="card">
+    <div class="card-title">✈️ 航班與住宿總覽</div>
+    <div class="info-grid">
+      <div class="info-box">
+        <strong>🛫 去程：12/26（六）中華航空 CI188</strong>
+        07:40 桃園機場（TPE）起飛<br>
+        10:50 抵達釜山金海機場（PUS）
+      </div>
+      <div class="info-box">
+        <strong>🛬 回程：12/30（三）中華航空 CI189</strong>
+        11:50 釜山金海機場（PUS）起飛<br>
+        13:15 抵達桃園機場（TPE）
+      </div>
+      <div class="info-box" style="grid-column: 1 / -1;">
+        <strong>🏨 四晚住宿：西面 SOTA SUITE（免換飯店）</strong>
+        韓文地址名稱：소타스위트 서면<br>
+        <div class="btn-links">
+          <span class="copy-box" onclick="copyText('SOTA SUITE Seomyeon')">📋 點擊複製 Uber 英文：SOTA SUITE Seomyeon</span>
+          <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=SOTA+SUITE+Seomyeon+Busan" target="_blank">📍 Google 地圖</a>
+          <a class="btn btn-outline" href="https://map.naver.com/p/search/소타스위트%20서면" target="_blank">🗺️ NAVER 地圖</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 行前必訂與準備清單 -->
+  <section id="prep" class="card">
+    <div class="card-title">📱 行前必訂與 App 準備清單 <span class="badge">出發前 2～4 週完成</span></div>
+    
+    <h3 style="font-size:1rem; color:var(--primary); margin: 6px 0 10px;">1. 必下載 4 款實用 App（在台灣先下載登入好）</h3>
+    <ul class="app-list">
+      <li class="app-item">
+        <div class="app-header">
+          <span class="app-name">🚕 Uber（計程車叫車首選）</span>
+        </div>
+        <div>台灣原本的 Uber App 到釜山直接通用（介面自動顯示中文），出發前確認已<strong>綁定海外回饋信用卡</strong>並完成簡訊驗證。</div>
+        <div class="btn-links">
+          <a class="btn btn-outline" href="https://apps.apple.com/tw/app/uber/id368677368" target="_blank">App Store 下載</a>
+          <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.ubercab" target="_blank">Google Play 下載</a>
+        </div>
+      </li>
+      <li class="app-item">
+        <div class="app-header">
+          <span class="app-name">🗺️ NAVER Map（韓國導航＆地鐵查詢）</span>
+        </div>
+        <div>Google Maps 在韓國無法規劃步行與地鐵路線，務必下載 <strong>NAVER Map</strong>，設定裡可切換<strong>繁體中文介面</strong>。</div>
+        <div class="btn-links">
+          <a class="btn btn-outline" href="https://apps.apple.com/tw/app/naver-map-navigation/id311867728" target="_blank">App Store 下載</a>
+          <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.nhn.android.nmap" target="_blank">Google Play 下載</a>
+        </div>
+      </li>
+      <li class="app-item">
+        <div class="app-header">
+          <span class="app-name">🗣️ Papago（韓文翻譯神器）</span>
+        </div>
+        <div>支援<strong>繁體中文</strong>，點餐時直接開「相機拍照翻譯」就能看懂全韓文菜單，也能語音對話。</div>
+        <div class="btn-links">
+          <a class="btn btn-outline" href="https://apps.apple.com/tw/app/naver-papago-ai-translator/id1147874819" target="_blank">App Store 下載</a>
+          <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.naver.labs.translator" target="_blank">Google Play 下載</a>
+        </div>
+      </li>
+      <li class="app-item">
+        <div class="app-header">
+          <span class="app-name">🚇 Subway Korea（全中文韓國地鐵圖，選用）</span>
+        </div>
+        <div>點選起點站與終點站即可顯示搭乘時間、票價與轉乘月台方向，直覺好懂。</div>
+        <div class="btn-links">
+          <a class="btn btn-outline" href="https://apps.apple.com/tw/app/subway-korea/id325924444" target="_blank">App Store 下載</a>
+          <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.imagedrome.jihachul" target="_blank">Google Play 下載</a>
+        </div>
+      </li>
+    </ul>
+
+    <h3 style="font-size:1rem; color:var(--primary); margin: 16px 0 10px;">2. 票券預訂與現金準備</h3>
+    <ul class="app-list">
+      <li class="app-item">
+        <div class="app-name">🚋 海雲臺天空膠囊列車（務必先訂）</div>
+        <div>預訂 <strong>12/27（日）09:30 或 10:00 場次</strong>，方向選<strong>「尾浦（Mipo）➔ 青沙浦（Cheongsapo）」</strong>，預訂 <strong>2 人座車廂</strong>。</div>
+        <div class="btn-links">
+          <a class="btn" href="https://www.bluelinepark.com/" target="_blank">🔗 前往海雲臺藍線公園官網預訂</a>
+        </div>
+      </li>
+      <li class="app-item">
+        <div class="app-name">🎨 ARTE MUSEUM Busan 門票</div>
+        <div>提前購買電子門票（當日憑 QR Code 直接入場，無需綁定特定入場時段）。</div>
+        <div class="btn-links">
+          <a class="btn" href="https://www.klook.com/zh-TW/search/result/?query=ARTE%20MUSEUM%20BUSAN" target="_blank">🔗 Klook 購票</a>
+          <a class="btn btn-outline" href="https://www.kkday.com/zh-tw/product/productlist?keyword=ARTE%20MUSEUM%20BUSAN" target="_blank">🔗 KKday 購票</a>
+        </div>
+      </li>
+      <li class="app-item">
+        <div class="app-name">💵 現金換匯與交通卡</div>
+        <div>台灣帶<strong>台幣現鈔</strong>即可（Day 1 到西面換錢所換韓元最划算）；抵達釜山機場後於超商購買並儲值 <strong>T-money 卡</strong>。</div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Day 1 -->
+  <section id="day1" class="card">
+    <div class="card-title">Day 1｜12/26（六）抵達釜山 ➔ 西面豬肉湯飯 ➔ 廣安里夜景</div>
+    <div class="timeline">
+      <div class="step">
+        <div class="time">05:40</div>
+        <div class="detail"><div class="detail-title">抵達桃園機場辦理報到、托運與出境</div></div>
+      </div>
+      <div class="step">
+        <div class="time">07:40 – 10:50</div>
+        <div class="detail"><div class="detail-title">搭乘華航 CI188 飛往釜山金海機場</div></div>
+      </div>
+      <div class="step">
+        <div class="time">10:50 – 11:45</div>
+        <div class="detail"><div class="detail-title">入境通關、領行李、機場便利商店購買／儲值 T-money 卡</div></div>
+      </div>
+      <div class="step">
+        <div class="time">11:45 – 12:30</div>
+        <div class="detail">
+          <div class="detail-title">機場門口叫 Uber 前往西面飯店寄放行李（約 30～40 分鐘）</div>
+          <span class="copy-box" onclick="copyText('SOTA SUITE Seomyeon')">📋 複製：SOTA SUITE Seomyeon</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">12:40 – 13:40</div>
+        <div class="detail">
+          <div class="detail-title">【午餐】步行約 6 分鐘至西面湯飯街吃豬肉湯飯</div>
+          推薦：松亭三代豬肉湯飯（송정3대국밥）
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Songjeong+3dae+Gukbap+Busan" target="_blank">📍 Google 地圖</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/송정3대국밥" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">13:40 – 15:00</div>
+        <div class="detail">
+          <div class="detail-title">【換錢＋逛街】步行 3 分鐘前往西面換錢所換韓元，接著逛西面地下街或樂天百貨</div>
+          西面老奶奶／那英換錢所（西面市場旁，台幣直接換韓元匯率最優）
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Seomyeon+Money+Exchange+Busan" target="_blank">📍 Google 地圖</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/서면%20나영환전소" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">15:00 – 16:00</div>
+        <div class="detail"><div class="detail-title">回飯店辦理入住進房，放戰利品與稍作休息</div></div>
+      </div>
+      <div class="step">
+        <div class="time">16:00 – 16:40</div>
+        <div class="detail"><div class="detail-title">西面站搭地鐵 2 號線至「廣安站」（3 號或 5 號出口），步行約 10 分鐘抵達海邊</div></div>
+      </div>
+      <div class="step">
+        <div class="time">16:40 – 18:50</div>
+        <div class="detail">
+          <div class="detail-title">廣安里海灘散步看黃昏海景、找海景咖啡廳歇腳</div>
+          可散步至民樂水邊公園看廣安大橋全景；推薦海景第一排咖啡：Working Holiday Busan
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Gwangalli+Beach+Busan" target="_blank">📍 廣安里海灘</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Working+Holiday+Busan+Gwangalli" target="_blank">📍 Working Holiday 咖啡</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">19:00 – 19:15</div>
+        <div class="detail"><div class="detail-title">✨ 沙灘欣賞 19:00 場次「廣安里無人機燈光秀」（建議 18:45 先到沙灘卡位）</div></div>
+      </div>
+      <div class="step">
+        <div class="time">19:20 – 20:50</div>
+        <div class="detail">
+          <div class="detail-title">【晚餐｜韓式海鮮料理】廣安里海邊用餐</div>
+          推薦：Nasari Sigdang（海鮮刀削麵、海鮮煎餅）或 尾浦家 廣安店（醬蟹、海鮮定食）
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Nasari+Sigdang+Gwangalli" target="_blank">📍 Nasari Sigdang</a>
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Mipojip+Gwangalli+Busan" target="_blank">📍 尾浦家 廣安店</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">21:00 – 21:40</div>
+        <div class="detail"><div class="detail-title">搭地鐵 2 號線返回西面站回飯店休息</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Day 2 -->
+  <section id="day2" class="card">
+    <div class="card-title">Day 2｜12/27（日）海雲臺膠囊列車 ➔ 新世界逛街＆汗蒸幕 ➔ 牛肋條烤肉</div>
+    <div class="timeline">
+      <div class="step">
+        <div class="time">08:30 – 09:30</div>
+        <div class="detail">
+          <div class="detail-title">西面站搭地鐵 2 號線至「海雲臺站」或「中洞站」，轉搭 Uber（約 5 分鐘）直達尾浦站</div>
+          <span class="copy-box" onclick="copyText('Haeundae Blueline Park Mipo Station')">📋 複製：Haeundae Blueline Park Mipo Station</span>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Haeundae+Blueline+Park+Mipo+Station" target="_blank">📍 尾浦站地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">09:30 – 11:45</div>
+        <div class="detail">
+          <div class="detail-title">搭乘天空膠囊列車（尾浦 ➔ 青沙浦，09:30 或 10:00 場次）</div>
+          約 30 分鐘抵達青沙浦看紅白燈塔、海邊平交道拍照 ➔ 沿<strong>海岸木棧道散步健行</strong>返回尾浦／海雲臺（約 35 分鐘平緩步道）
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Cheongsapo+Twin+Lighthouses+Busan" target="_blank">📍 青沙浦燈塔</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">12:00 – 13:30</div>
+        <div class="detail">
+          <div class="detail-title">【午餐】海雲臺周邊享用海鮮料理</div>
+          推薦：海雲臺元祖鮑魚粥（해운대원조전복죽）或海雲臺烤盲鰻／烤貝類一條街
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Haeundae+Wonjo+Jeonbokjuk" target="_blank">📍 海雲臺元祖鮑魚粥</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/해운대원조전복죽" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">13:30 – 14:15</div>
+        <div class="detail"><div class="detail-title">海雲臺海灘散步消化、吹海風</div></div>
+      </div>
+      <div class="step">
+        <div class="time">14:15 – 14:35</div>
+        <div class="detail">
+          <div class="detail-title">海雲臺搭 Uber（約 10～15 分鐘）前往 Centum City 新世界百貨</div>
+          <span class="copy-box" onclick="copyText('Shinsegae Department Store Centum City')">📋 複製：Shinsegae Department Store Centum City</span>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Shinsegae+Department+Store+Centum+City" target="_blank">📍 新世界百貨地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">14:35 – 16:30</div>
+        <div class="detail"><div class="detail-title">【新世界百貨逛街】逛韓國最大百貨公司（服飾、戶外品牌、超市伴手禮）</div></div>
+      </div>
+      <div class="step">
+        <div class="time">16:30 – 20:00</div>
+        <div class="detail">
+          <div class="detail-title">同棟「SPA LAND Centum City」體驗頂級汗蒸幕、泡湯與休息（3.5 小時充裕不超時）</div>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=SPA+LAND+Centum+City+Busan" target="_blank">📍 SPA LAND 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">20:00 – 21:30</div>
+        <div class="detail">
+          <div class="detail-title">【晚餐｜牛肋條烤肉主場】享用韓式烤牛肋排／牛肋條</div>
+          新世界百貨樓上美食街韓牛烤肉，或搭車前往海雲臺吃「海雲臺傳說中的牛肋排」，結束後搭地鐵 2 號線回西面
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Haeundae+Somunnan+Amso+Galbijip" target="_blank">📍 海雲臺傳說中的牛肋排</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/해운대소문난암소갈비집" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Day 3 -->
+  <section id="day3" class="card">
+    <div class="card-title">Day 3｜12/28（一）二妓臺山海健行＆天空步道 ➔ 網紅貝果 ➔ 馬鈴薯排骨湯</div>
+    <div class="timeline">
+      <div class="step">
+        <div class="time">08:30 – 09:00</div>
+        <div class="detail">
+          <div class="detail-title">飯店門口叫 Uber（約 25 分鐘）直達二妓臺公園北端入口</div>
+          <span class="copy-box" onclick="copyText('Igidae Coastal Walk')">📋 複製：Igidae Coastal Walk</span>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Igidae+Coastal+Walk+Busan" target="_blank">📍 二妓臺入口地圖</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/이기대수변공원" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">09:00 – 11:30</div>
+        <div class="detail">
+          <div class="detail-title">【山海步道健行】沿二妓臺海岸散策路一路向南健行（全長約 4.7 公里，約 2～2.5 小時）</div>
+          終點抵達 <strong>五六島天空步道（Oryukdo Skywalk）</strong> 走海上透明玻璃棧道
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Oryukdo+Skywalk+Busan" target="_blank">📍 五六島天空步道</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">11:30 – 11:55</div>
+        <div class="detail"><div class="detail-title">從五六島天空步道停車場叫 Uber（約 15～20 分鐘）前往廣安里</div></div>
+      </div>
+      <div class="step">
+        <div class="time">12:00 – 13:30</div>
+        <div class="detail"><div class="detail-title">【午餐】廣安里周邊享用韓式定食、冷麵或海鮮料理</div></div>
+      </div>
+      <div class="step">
+        <div class="time">13:40 – 15:30</div>
+        <div class="detail">
+          <div class="detail-title">【午茶】步行至網紅貝果店「All Sunday」品嚐現烤貝果與咖啡</div>
+          <span class="copy-box" onclick="copyText('All Sunday Gwangalli')">📋 複製：All Sunday Gwangalli</span>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=All+Sunday+Gwangalli+Busan" target="_blank">📍 All Sunday 地圖</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/올선데이%20광안점" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">15:30 – 16:30</div>
+        <div class="detail"><div class="detail-title">從廣安站搭地鐵 2 號線返回西面，順道逛西面地下街或樂天百貨</div></div>
+      </div>
+      <div class="step">
+        <div class="time">18:30 – 20:30</div>
+        <div class="detail">
+          <div class="detail-title">【晚餐】西面商圈享用熱騰騰的「馬鈴薯排骨湯（감자탕）」或韓式炸雞</div>
+          <div class="btn-links">
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/서면%20감자탕" target="_blank">🗺️ NAVER 搜西面馬鈴薯排骨湯</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Day 4 -->
+  <section id="day4" class="card">
+    <div class="card-title">Day 4｜12/29（二）影島冠軍咖啡 ➔ ARTE MUSEUM ➔ 白淺灘 ➔ 豬肉烤肉</div>
+    <div class="timeline">
+      <div class="step">
+        <div class="time">09:00 – 09:40</div>
+        <div class="detail">
+          <div class="detail-title">西面站搭地鐵 1 號線至「南浦站」（6 號出口），轉搭 Uber 過橋（約 6 分鐘）抵達影島</div>
+          <span class="copy-box" onclick="copyText('Momos Coffee Roastery & Coffee bar')">📋 複製：Momos Coffee Roastery & Coffee bar</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">09:40 – 11:10</div>
+        <div class="detail">
+          <div class="detail-title">【早安咖啡】港口旁的「Momos Coffee 影島店」喝世界冠軍咖啡、看海景</div>
+          💡 <strong>記得在此直接買好咖啡豆帶回台灣！</strong>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Momos+Coffee+Roastery+Yeongdo+Busan" target="_blank">📍 Momos Coffee 影島店</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/모모스커피%20영도점" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">11:10 – 11:20</div>
+        <div class="detail">
+          <div class="detail-title">叫 Uber（車程僅約 5 分鐘）前往美術館</div>
+          <span class="copy-box" onclick="copyText('ARTE MUSEUM Busan')">📋 複製：ARTE MUSEUM Busan</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">11:20 – 13:00</div>
+        <div class="detail">
+          <div class="detail-title">參觀「ARTE MUSEUM Busan」沉浸式光影藝術展（出示電子憑證 QR Code 入場）</div>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=ARTE+MUSEUM+Busan" target="_blank">📍 ARTE MUSEUM 地圖</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/아르떼뮤지엄%20부산" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">13:00 – 13:15</div>
+        <div class="detail">
+          <div class="detail-title">叫 Uber（約 10 分鐘）前往白淺灘文化村</div>
+          <span class="copy-box" onclick="copyText('Huinnyeoul Culture Village')">📋 複製：Huinnyeoul Culture Village</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">13:15 – 15:45</div>
+        <div class="detail">
+          <div class="detail-title">【午餐＋散步】白淺灘文化村海景小店吃海鮮拉麵，沿絕影海岸散步路看海、逛小店</div>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Huinnyeoul+Culture+Village+Busan" target="_blank">📍 白淺灘文化村地圖</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/흰여울문화마을" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">15:45 – 18:00</div>
+        <div class="detail">
+          <div class="detail-title">【彈性時段：依爸媽當下體力二選一】</div>
+          <div class="option-box">
+            <strong>選項 A（體力充足想逛街）：</strong>從影島搭 Uber 過橋至 <strong>南浦洞（BIFF 廣場／光復路商圈）</strong>（約 10 分鐘），吃堅果黑糖餅、逛街採買，之後從「南浦站」搭地鐵 1 號線直達回西面。<br><br>
+            <strong>選項 B（想早點回飯店歇腳）：</strong>直接從影島叫 Uber 返回西面飯店（約 25～30 分鐘）放戰利品、休息，或去西面樂天百貨地下超市採買伴手禮。
+          </div>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=BIFF+Square+Busan" target="_blank">📍 南浦洞 BIFF 廣場</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">18:30 – 20:30</div>
+        <div class="detail">
+          <div class="detail-title">【晚餐｜豬肉烤肉主場】西面飯店步行約 5 分鐘吃專人代烤厚切五花肉</div>
+          推薦：味贊王鹽烤肉 西面店（맛찬들왕소금구이 서면점）
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Matchandeul+Wang+Sogeumgui+Seomyeon" target="_blank">📍 味贊王鹽烤肉地圖</a>
+            <a class="btn btn-outline" href="https://map.naver.com/p/search/맛찬들왕소금구이%20서면점" target="_blank">🗺️ NAVER 地圖</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Day 5 -->
+  <section id="day5" class="card">
+    <div class="card-title">Day 5｜12/30（三）從容早餐 ➔ 前往機場返台</div>
+    <div class="timeline">
+      <div class="step">
+        <div class="time">08:00 – 09:00</div>
+        <div class="detail"><div class="detail-title">起床做最後行李打包，飯店周邊簡單吃早餐或喝杯咖啡</div></div>
+      </div>
+      <div class="step">
+        <div class="time">09:00 – 09:15</div>
+        <div class="detail"><div class="detail-title">辦理退房手續</div></div>
+      </div>
+      <div class="step">
+        <div class="time">09:15 – 09:50</div>
+        <div class="detail">
+          <div class="detail-title">飯店門口直接叫 Uber 前往釜山金海機場（車程約 30～35 分鐘）</div>
+          <span class="copy-box" onclick="copyText('Gimhae International Airport')">📋 複製：Gimhae International Airport</span>
+          <div class="btn-links">
+            <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport" target="_blank">📍 金海機場地圖</a>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="time">09:50 – 11:50</div>
+        <div class="detail"><div class="detail-title">辦理登機托運、退稅（若有）與出境安檢</div></div>
+      </div>
+      <div class="step">
+        <div class="time">11:50 – 13:15</div>
+        <div class="detail"><div class="detail-title">搭乘華航 CI189 返抵桃園機場，平安回家！</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    祝爸爸媽媽釜山旅行愉快、平安順心 ❤️<br>
+    （點擊地圖按鈕可直接開啟導航；點擊灰色英文框可一鍵複製給 Uber 叫車）
+  </footer>
+</div>
+
+<div id="toast" class="toast">已複製英文地名！可直接貼上 Uber 搜尋</div>
+
+<script>
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => showToast(text));
+  } else {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.left = "-9999px";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      showToast(text);
+    } catch (err) {}
+    document.body.removeChild(textArea);
+  }
+}
+
+function showToast(text) {
+  const toast = document.getElementById("toast");
+  toast.textContent = "已複製：" + text;
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2200);
+}
+</script>
+</body>
+</html>
